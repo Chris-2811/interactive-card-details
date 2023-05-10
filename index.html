@@ -21,7 +21,7 @@
           <img src="images/card-logo.svg" alt="" class="card-front__logo" />
           <span class="card-front__number">0000 0000 0000 0000</span>
           <span class="card-front__name">Jane applewood</span>
-          <span class="card-front__expiry">mm / yy</span>
+          <span class="card-front__expiry"><span id="month">MM</span>/<span id="year">YY</span></span>
         </div>
 
         <div class="card-back">
@@ -34,27 +34,30 @@
         <div class="form-container">
           <div class="form-group">
             <p class="name">Cardholder Name</p>
-            <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" />
+            <input type="text" name="name" id="input-card-name" placeholder="e.g. Jane Appleseed" />
+            <div class="alert-message-name"></div>
           </div>
           <div class="form-group">
             <p class="number">Card Number</p>
-            <input type="number" name="number" id="number" placeholder="e.g. 1234 5678 9123 0000" />
+            <input type="number" name="number" id="input-card-number" placeholder="e.g. 1234 5678 9123 0000" />
+            <div class="alert-message-number"></div>
           </div>
           <div class="form-group">
             <div class="expiry-container">
               <label for="expiry">EXP. DATE (MM/YY)</label>
               <div class="container">
-                <input type="number" name="month" id="month" placeholder="MM">
-                <input type="number" name="year" id="year" placeholder="YY">
+                <input type="number" name="month" id="input-month" placeholder="MM">
+                <input type="number" name="year" id="input-year" placeholder="YY">
               </div>
             </div>
             
-            <div class="cvc-container">
+            <div class="ccv-container">
               <label for="cvc" id="cvc-label">CVC</label>
-              <input type="number" name="cvc" id="cvc" placeholder="CVC">
+              <input type="number" name="ccv" id="input-ccv" placeholder="CVC">
             </div>
     
           </div>
+          <button type="submit" class="btn">Confirm</button>
         </div>
       </form>
     </main>

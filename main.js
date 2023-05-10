@@ -1,117 +1,138 @@
-const creditNumberDisplay = document.querySelector('.card-number');
-const expDate = document.querySelector('.expiration-date');
+const cardNumber = document.querySelector('.card-front__number');
+const cardName = document.querySelector('.card-front__name');
+const cardExpDate = document.querySelector('.card-front__expiry');
+const cardCCV = document.querySelector('.card-back__ccv');
+
+const inputName = document.getElementById('input-card-name');
+const inputCardNumber = document.getElementById('input-card-number');
+const inputExpMonth = document.getElementById('input-month');
+const inputExpYear = document.getElementById('input-year');
+const inputCCV = document.getElementById('input-ccv');
+
 const form = document.querySelector('.form');
-const inputCardNumber = document.getElementById('cardnumber');
-const inputExpirationYear = document.getElementById('expiration')
-const inputExpirationMonth = document.getElementById('expiration-month')
-const inputCVC = document.getElementById('CVC');
-const inputName = document.getElementById('name');
 const formResponse = document.querySelector('.form-response');
+const alertMessageNumber = document.querySelector('.alert-message-number')
+const alertMessageName = document.querySelector('.alert-message-name')
 
-console.log(expDate)
+// Add all details to card
 
-function addCreditNumber(e) {
-    e.preventDefault()
+function addCardDetails(e) {
+        e.preventDefault();
+        
+        // Check if all number fields are not empty or < 16
+        if  (inputCardNumber.value === '') {
+            showAlert('Please enter a valid credit card number!', 'number')
+            return;
+        } else if (inputCardNumber.value.length < 16) {
+            showAlert('Wrong format', 'number')
+            inputCardNumber.style.border = '1px solid red'
+            return;
+          } 
 
-    const number = document.getElementById('cardnumber').value
-    const formattedNumber = formatCreditNumber(number)
-    console.log(formattedNumber)
+        cardNumber.innerHTML = addSpacesToNumber(inputCardNumber.value)
 
-    const name = document.getElementById('name').value;
-    const cardName = document.querySelector('.card-name');
+    }
 
-    const month = inputExpirationMonth.value;
-    const year = inputExpirationYear.value;
-
-    const expirationDate = `${month} / ${year}`;
-
-    expDate.innerHTML = expirationDate;
+function showAlert(message, type) {
+    if(type = 'number' && message === 'Please enter a valid credit card number!' || message === 'Wrong format' ) {
+        alertMessageNumber.classList.add('show')
+        alertMessageNumber.innerHTML = message
+    } 
     
-    cardName.innerHTML = name;
 
-    if(inputCVC.value.length < 3 || inputCVC.value.length === '') {
-        alert('Please enter a valid CVC number')
-        e.preventDefault();
+}
+
+// Add number to card live
+
+function displayCardNumber(e) {
+    const number = e.target.value;
+    const formatedNumber = addSpacesToNumber(number)
+
+    if(formatedNumber.length > 19) {
+        e.target.value = number.slice(0, 16);
     } else {
-        form.style.display = 'none'
-        formResponse.style.display = 'block'
-
+        cardNumber.innerHTML = formatedNumber
     }
-    creditNumberDisplay.innerHTML = formattedNumber
+  }
+
+// Add name to card live
+
+function displayName(e) {
+    let inputValue = e.target.value;
+  const sanitizedInputValue = inputValue.replace(/[0-9]/g, ''); // remove all numbers from input value
+  if (sanitizedInputValue !== inputValue) {
+    e.target.value = sanitizedInputValue; // update input field value with sanitized value
+    inputValue = sanitizedInputValue; // update input value variable with sanitized value
+  }
+  if (inputValue.length > 30) {
+    inputValue = inputValue.slice(0, 30); // truncate input value to maximum of 30 characters
+    e.target.value = inputValue; // update input field value with truncated value
+  }
+    cardName.innerHTML = inputValue
 }
 
+// Add and limit month to card
 
+function displayLimitMonth(e) {
+    // Limit input
 
-
-function getCardNumber(e) {
-    // Limit the input to 16 digits
-    if (e.target.value.length > 16) {
-        e.preventDefault();
-        return;
-    }
-    let number = formatCreditNumber(e.target.value);
-
-    creditNumberDisplay.innerHTML = number;
-
-    if (inputCardNumber.value.length >= 16 && e.key !== 'Backspace') {
-        e.preventDefault();
+    if (e.target.value.length > 2) {
+        e.target.value = e.target.value.slice(0, 2);
       }
+
+      if (e.target.value > 12) {
+        e.target.value = 12;
+      }
+
+      const month = document.getElementById('month').innerHTML = e.target.value
+
+      
+    
 }
 
+function displayLimitYear(e) {
+    const currentYear = new Date().getFullYear();
+    const lastTwoDigits = currentYear % 100;
 
-function formatCreditNumber(number) {
-    // Remove all non-digit characters
-    number = number.replace(/\D/g, '');
-  
-    // Add a space after every 4 digits
-    number = number.replace(/(\d{4})/g, '$1 ');
-  
-    // Trim any extra spaces
-    number = number.trim();
-  
-    return number;
+    if (e.target.value.length > 2) {
+        e.target.value = e.target.value.slice(0, 2);
+      }
+
+    const year = document.getElementById('year').innerHTML = e.target.value
+
   }
+
+// Display Limit CCV
   
-  function limitInput(e) {
-    if (inputExpirationYear.value.length >= 4 && e.key !== 'Backspace' && e.key !== 'Delete') {
-      e.preventDefault();
+function displayLimitCCV(e) {
+    e.target.value = e.target.value.replace(/\D/g, '')
+    if (e.target.value.length > 3 || isNaN(e.target.value)) {
+      e.target.value = e.target.value.slice(0, 3);
     }
-   
-    if (e.key === 'e' || e.key === 'E') {
-        e.preventDefault();
-      }
-
-
+  
+    cardCCV.innerHTML = e.target.value
   }
-  function limitInputMonth(e) {
-    if (inputExpirationMonth.value.length >= 2 && e.key !== 'Backspace' && e.key !== 'Delete') {
-      e.preventDefault();
+  
+// Add spaces to number
+
+function addSpacesToNumber(number) {
+    const pattern = /(\d{1,4})/g;
+    const parts = number.toString().match(pattern);
+    if (!parts) {
+      return number;
     }
-
-    if (e.key === 'e' || e.key === 'E') {
-        e.preventDefault();
-      }
-
+    return parts.join(' ');
   }
-
-  function limitInputCVC(e) {
-    if (inputCVC.value.length >= 3 && e.key !== 'Backspace' && e.key !== 'Delete') {
-        e.preventDefault();
-      }
-  
-      if (e.key === 'e' || e.key === 'E') {
-          e.preventDefault();
-        }
-  }
-  
 
 
 function addEventListeners() {
-    form.addEventListener('submit', addCreditNumber);
-    inputCardNumber.addEventListener('keydown', getCardNumber);
-    inputExpirationYear.addEventListener('keydown', limitInput);
-    inputExpirationMonth.addEventListener('keydown', limitInputMonth);
-    inputCVC.addEventListener('keydown',limitInputCVC);
+  form.addEventListener('submit', addCardDetails);
+
+  inputCardNumber.addEventListener('input', displayCardNumber);
+  inputName.addEventListener('input', displayName)  
+  inputExpMonth.addEventListener('input', displayLimitMonth);
+  inputExpYear.addEventListener('input', displayLimitYear);
+  inputCCV.addEventListener('input', displayLimitCCV); 
 
 
 }
