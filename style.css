@@ -367,7 +367,7 @@ input {
   }
 
   .form-container {
-    margin-top: 15px;
+    margin-top: 40px;
     margin-left: 14.5%;
     width: 45%;
     max-width: 381px;
@@ -396,7 +396,7 @@ input {
 
 @media (min-width: 1440px) {
   .card-front {
-    top: 20%;
+    top: 21%;
     left: 40%;
     height: 245px;
   }
@@ -404,11 +404,11 @@ input {
     width: 447px;
     height: 245px;
     left: 55%;
-    top: 53%;
+    top: 52%;
   }
 
   .form-container {
-    margin-top: 15px;
+    margin-top: 40px;
     margin-left: 14.5%;
     width: 45%;
     max-width: 381px;
