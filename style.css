@@ -54,12 +54,7 @@ img {
   grid-template-rows: 35% 65%;
 }
 
-.content-grid > * {
-  border: 2px solid orange;
-}
-
 .card-previews {
-  border: 1px solid green;
   color: #fff;
   position: relative;
   background-color: var(--very-dark-violet);
@@ -184,19 +179,16 @@ input {
 }
 
 .alert-message-name {
-  color: red;
   margin-top: 8px;
   margin-left: 5px;
 }
 
 .alert-message-number {
-  color: red;
   margin-top: 8px;
   margin-left: 5px;
 }
 
 .alert-message-ccv {
-  color: red;
   margin-top: 8px;
   margin-left: 5px;
 }
@@ -206,14 +198,12 @@ input {
 }
 
 .alert-message-month {
-  color: red;
   margin-top: 8px;
   margin-left: 5px;
   position: absolute;
   top: 100%;
 }
 .alert-message-year {
-  color: red;
   margin-top: 8px;
   margin-left: 5px;
 }
