@@ -313,7 +313,7 @@ input {
     padding: 32px 16px 0 16px;
   }
   .card-front {
-    top: 25%;
+    top: 24%;
     left: 25%;
     width: 397px;
     height: 215px;
@@ -323,10 +323,10 @@ input {
     width: 397px;
     height: 215px;
     left: 40%;
-    top: 51%;
+    top: 53%;
   }
   .form-container {
-    margin-top: 15px;
+    margin-top: 40px;
     margin-left: 15%;
     width: 45%;
 
@@ -354,7 +354,7 @@ input {
 
 @media (min-width: 1200px) {
   .card-front {
-    top: 21%;
+    top: 20%;
     left: 25%;
     width: 447px;
     height: 245px;
@@ -363,7 +363,7 @@ input {
     width: 447px;
     height: 245px;
     left: 42%;
-    top: 52%;
+    top: 53%;
   }
 
   .form-container {
@@ -396,15 +396,15 @@ input {
 
 @media (min-width: 1440px) {
   .card-front {
-    top: 21%;
-    left: 44%;
+    top: 20%;
+    left: 40%;
     height: 245px;
   }
   .card-back {
     width: 447px;
     height: 245px;
     left: 55%;
-    top: 52%;
+    top: 53%;
   }
 
   .form-container {
