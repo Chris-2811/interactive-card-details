@@ -17,15 +17,15 @@
     <main class="content-grid">
       <div class="card-previews">
         <div class="card-front">
-          <img src="images/bg-card-front.png" alt="" class="card-front__bg" />
           <img src="images/card-logo.svg" alt="" class="card-front__logo" />
           <span class="card-front__number">0000 0000 0000 0000</span>
-          <span class="card-front__name">Jane applewood</span>
-          <span class="card-front__expiry"><span id="month">MM</span>/<span id="year">YY</span></span>
+          <div class="card-front__container">
+            <span class="card-front__name">Jane appleseed</span>
+            <span class="card-front__expiry"><span id="month">MM</span>/<span id="year">YY</span></span>
+          </div>
         </div>
 
         <div class="card-back">
-          <img src="images/bg-card-back.png" alt="" class="card-back__bg" />
           <span class="card-back__ccv">000</span>
         </div>
       </div>
@@ -47,17 +47,26 @@
               <label for="expiry">EXP. DATE (MM/YY)</label>
               <div class="container">
                 <input type="number" name="month" id="input-month" placeholder="MM">
+                <div class="alert-message-month"></div>
                 <input type="number" name="year" id="input-year" placeholder="YY">
+                <div class="alert-message-year"></div>
               </div>
             </div>
             
             <div class="ccv-container">
               <label for="cvc" id="cvc-label">CVC</label>
-              <input type="number" name="ccv" id="input-ccv" placeholder="CVC">
+              <input type="number" name="ccv" id="input-ccv" placeholder="e.g. 123">
+              <div class="alert-message-ccv"></div>
             </div>
     
           </div>
           <button type="submit" class="btn">Confirm</button>
+        </div>
+        <div class="form-response">
+          <img class="form_response__icon" src="images/icon-complete.svg" alt="">
+          <h1 class="form-response__heading">Thank you!</h1>
+          <p class="form-response__text">We've added your card details</p>
+          <button type="submit" class="form-response__btn">Continue</button>
         </div>
       </form>
     </main>

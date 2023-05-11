@@ -13,34 +13,58 @@ const form = document.querySelector('.form');
 const formResponse = document.querySelector('.form-response');
 const alertMessageNumber = document.querySelector('.alert-message-number')
 const alertMessageName = document.querySelector('.alert-message-name')
+const alertMessageCCV = document.querySelector('.alert-message-ccv')
+const alertMessageMonth = document.querySelector('.alert-message-month')
+const alertMessageYear = document.querySelector('.alert-message-year')
+const formContainer = document.querySelector('.form-container')
 
+console.log(formContainer)
 // Add all details to card
 
 function addCardDetails(e) {
-        e.preventDefault();
-        
-        // Check if all number fields are not empty or < 16
-        if  (inputCardNumber.value === '') {
-            showAlert('Please enter a valid credit card number!', 'number')
-            return;
-        } else if (inputCardNumber.value.length < 16) {
-            showAlert('Wrong format', 'number')
-            inputCardNumber.style.border = '1px solid red'
-            return;
-          } 
+  e.preventDefault();
 
-        cardNumber.innerHTML = addSpacesToNumber(inputCardNumber.value)
+  // Check if all fields are not empty
 
-    }
-
-function showAlert(message, type) {
-    if(type = 'number' && message === 'Please enter a valid credit card number!' || message === 'Wrong format' ) {
-        alertMessageNumber.classList.add('show')
-        alertMessageNumber.innerHTML = message
-    } 
-    
-
+if (inputCardNumber.value === '' || inputCardNumber.value.length < 16) {
+    inputCardNumber.style.border = '1px solid red';
+    alertMessageNumber.innerHTML = inputCardNumber.value === '' ? 'Please enter a number' : 'Wrong format';
 }
+
+if (inputName.value === '') {
+    inputName.style.border = '1px solid red';
+    alertMessageName.innerHTML = 'Please enter a name';
+}
+
+if (inputCCV.value === '') {
+    inputCCV.style.border = '1px solid red';
+    alertMessageCCV.innerHTML = 'Can\'t be blank';
+}
+
+if (inputExpMonth.value === '' || inputExpYear.value === '') {
+    
+    if(inputExpMonth.value === '') {
+      inputExpMonth.style.border = '1px solid red';
+    } 
+    if(inputExpYear.value === '') {
+
+      inputExpYear.style.border = '1px solid red';
+    }
+  
+    alertMessageMonth.innerHTML = 'Can\'t be blank';
+    return;
+}
+
+console.log(formContainer)
+
+formContainer.style.display = 'none';
+formResponse.style.display = 'block'
+
+
+  cardNumber.innerHTML = addSpacesToNumber(inputCardNumber.value)
+}
+
+
 
 // Add number to card live
 
