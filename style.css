@@ -40,6 +40,7 @@ img {
   color: #fff;
   border-radius: 8px;
   border: none;
+  line-height: 22.97px;
 }
 
 .btn:hover {
@@ -454,7 +455,7 @@ input::placeholder {
 
 @media (min-width: 1440px) {
   .card-front {
-    top: 20.6%;
+    top: 20.8%;
     left: 35%;
     height: 245px;
   }
