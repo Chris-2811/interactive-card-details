@@ -400,12 +400,10 @@ input::placeholder {
     margin-right: 10px;
   }
 
-
-.form-group:nth-child(2),
-.form-group:nth-child(3) {
-  margin-top: 26px;
-}
-
+  .form-group:nth-child(2),
+  .form-group:nth-child(3) {
+    margin-top: 26px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -424,7 +422,7 @@ input::placeholder {
   }
 
   .form-container {
-    margin-top: 40px;
+    margin-top: 45px;
     margin-left: 14.5%;
     width: 45%;
     max-width: 381px;
@@ -457,7 +455,7 @@ input::placeholder {
 
 @media (min-width: 1440px) {
   .card-front {
-    top: 21%;
+    top: 20.5%;
     left: 35%;
     height: 245px;
   }
