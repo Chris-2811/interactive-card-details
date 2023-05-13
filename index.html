@@ -43,24 +43,27 @@
             <div class="alert-message-number"></div>
           </div>
           <div class="form-group">
-            <div class="expiry-container">
-              <label for="expiry">EXP. DATE (MM/YY)</label>
-              <div class="container">
-                <input type="number" name="month" id="input-month" placeholder="MM">
-                <div class="alert-message-month"></div>
-                <input type="number" name="year" id="input-year" placeholder="YY">
-                <div class="alert-message-year"></div>
-              </div>
-            </div>
-            
-            <div class="ccv-container">
-              <label for="cvc" id="cvc-label">CVC</label>
-              <input type="number" name="ccv" id="input-ccv" placeholder="e.g. 123">
-              <div class="alert-message-ccv"></div>
-            </div>
-    
+                  <div class="container">
+                      <div class="expiry-container">
+                        <label for="expiry">EXP. DATE (MM/YY)</label>
+                        <div class="input-container">
+                          <input type="number" name="month" id="input-month" placeholder="MM">
+                          <input type="number" name="year" id="input-year" placeholder="YY">
+                        </div>
+                        <div class="alert-message-month"></div>
+                      </div>
+                    
+                    <div class="ccv-container">
+                      <label for="cvc" id="cvc-label">CVC</label>
+                      <input type="number" name="ccv" id="input-ccv" placeholder="e.g. 123">
+                      <div class="alert-message-ccv"></div>
+                    </div>
+                  </div>
           </div>
+            
+            
           <button type="submit" class="btn">Confirm</button>
+          </div>
         </div>
         <div class="form-response">
           <img class="form_response__icon" src="images/icon-complete.svg" alt="">

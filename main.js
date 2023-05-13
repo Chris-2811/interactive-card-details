@@ -45,6 +45,7 @@ if (inputExpMonth.value === '' || inputExpYear.value === '') {
     
     if(inputExpMonth.value === '') {
       inputExpMonth.style.border = '1px solid red';
+      alertMessageMonth.classList.add('show')
     } 
     if(inputExpYear.value === '') {
 

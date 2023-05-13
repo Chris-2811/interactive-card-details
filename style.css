@@ -118,13 +118,11 @@ img {
 .card-front__name {
   font-size: 9px;
   text-transform: uppercase;
-
 }
 
 .card-front__expiry {
   font-size: 9px;
   text-transform: uppercase;
-
 }
 
 .card-front__number {
@@ -195,16 +193,19 @@ input {
 .alert-message-name {
   margin-top: 8px;
   margin-left: 5px;
+  color: red;
 }
 
 .alert-message-number {
   margin-top: 8px;
   margin-left: 5px;
+  color: red;
 }
 
 .alert-message-ccv {
-  margin-top: 8px;
   margin-left: 5px;
+  margin-top: 8px;
+  color: red;
 }
 
 .container {
@@ -214,12 +215,12 @@ input {
 .alert-message-month {
   margin-top: 8px;
   margin-left: 5px;
-  position: absolute;
-  top: 100%;
+  color: red;
 }
 .alert-message-year {
   margin-top: 8px;
   margin-left: 5px;
+  color: red;
 }
 
 #input-ccv {
@@ -238,7 +239,12 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-top: 20px;
 }
 
-.form-group:nth-child(3) {
+.form-group .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-container {
   display: flex;
 }
 
@@ -255,6 +261,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .ccv-container {
   width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 .ccv-container label {
@@ -262,8 +271,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .form-group:nth-child(3) .container {
-  display: flex;
-  justify-content: stretch;
 }
 .form-group:nth-child(3) .container input {
   width: 50%;
@@ -321,7 +328,7 @@ input::placeholder {
   }
 
   .btn {
-    margin-top: 40px;
+    margin-top: 32px;
   }
 
   .card-previews {
@@ -354,7 +361,6 @@ input::placeholder {
     margin-top: 40px;
     margin-left: 15%;
     width: 45%;
-
   }
 
   .card-front__name {
@@ -371,7 +377,6 @@ input::placeholder {
     font-size: 26px;
     margin-top: 12%;
     margin-bottom: 6%;
-
   }
 
   .card-back__ccv {
@@ -388,9 +393,6 @@ input::placeholder {
   #input-month {
     margin-right: 10px;
   }
-
-
-  
 }
 
 @media (min-width: 1200px) {
@@ -428,7 +430,6 @@ input::placeholder {
     margin-top: 15%;
     margin-bottom: 6%;
     letter-spacing: 3.42px;
-
   }
 
   .card-back__ccv {
@@ -437,13 +438,13 @@ input::placeholder {
 
   .expiry-container {
     min-width: 50%;
-   max-width: 50%;
+    max-width: 50%;
   }
 }
 
 @media (min-width: 1440px) {
   .card-front {
-    top: 19%;
+    top: 20%;
     left: 35%;
     height: 245px;
   }
@@ -451,7 +452,7 @@ input::placeholder {
     width: 447px;
     height: 245px;
     left: 55%;
-    top: 53%;
+    top: 54%;
   }
 
   .form-container {
@@ -462,7 +463,7 @@ input::placeholder {
   }
 }
 
-@media(min-width: 1600px) {
+@media (min-width: 1600px) {
   .card-front {
     top: 20%;
     left: 55%;
