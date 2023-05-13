@@ -41,6 +41,8 @@ img {
   border-radius: 8px;
   border: none;
   line-height: 22.97px;
+  font-family: "Space Grotesk", sans-serif;
+
 }
 
 .btn:hover {
@@ -291,6 +293,7 @@ input {
   border-radius: 8px;
   border: 1px solid var(--light-grayish-violet);
   margin-top: 9px;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 input::placeholder {
@@ -335,6 +338,7 @@ input::placeholder {
 
   .btn {
     margin-top: 32px;
+
   }
 
   .card-previews {
