@@ -457,7 +457,7 @@ input::placeholder {
 
 @media (min-width: 1440px) {
   .card-front {
-    top: 20%;
+    top: 21%;
     left: 35%;
     height: 245px;
   }
@@ -469,7 +469,6 @@ input::placeholder {
   }
 
   .form-container {
-    margin-top: 40px;
     margin-left: 14.5%;
     width: 45%;
     max-width: 381px;
