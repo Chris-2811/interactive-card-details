@@ -292,7 +292,7 @@ input {
   padding: 11px 16px;
   border-radius: 8px;
   border: 1px solid var(--light-grayish-violet);
-  margin-top: 9px;
+  margin-top: 7px;
   font-family: "Space Grotesk", sans-serif;
 }
 
@@ -337,7 +337,7 @@ input::placeholder {
   }
 
   .btn {
-    margin-top: 32px;
+    margin-top: 30px;
 
   }
 
