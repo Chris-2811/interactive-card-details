@@ -28,7 +28,7 @@ function addCardDetails(e) {
 
 if (inputCardNumber.value === '' || inputCardNumber.value.length < 16) {
     inputCardNumber.style.border = '1px solid red';
-    alertMessageNumber.innerHTML = inputCardNumber.value === '' ? 'Please enter a number' : 'Wrong format';
+    alertMessageNumber.innerHTML = inputCardNumber.value === '' ? 'Please enter a number' : 'Wrong format, please enter 16 digits';
     isValid = false;
 }
 

@@ -178,7 +178,7 @@ input {
 
 .form-container {
   display: block;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .form-response img {
@@ -298,8 +298,6 @@ input[type="number"]::-webkit-inner-spin-button {
   letter-spacing: 2px;
 }
 
-.form-group:nth-child(3) .container {
-}
 .form-group:nth-child(3) .container input {
   width: 50%;
 }
