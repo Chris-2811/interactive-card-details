@@ -489,7 +489,7 @@ input::placeholder {
 
 @media (min-width: 1440px) {
   .card-front {
-    top: 17%;
+    top: 19%;
     left: 35%;
     height: 245px;
   }
@@ -497,7 +497,7 @@ input::placeholder {
     width: 447px;
     height: 245px;
     left: 55%;
-    top: 52%;
+    top: 53%;
   }
 
   .form-container {
