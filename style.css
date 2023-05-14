@@ -374,7 +374,7 @@ input::placeholder {
     padding: 32px 16px 0 16px;
   }
   .card-front {
-    top: 22%;
+    top: 22.5%;
     left: 25%;
     padding: 26px 30px 26px 32px;
     width: 397px;
@@ -385,7 +385,7 @@ input::placeholder {
     width: 397px;
     height: 215px;
     left: 40%;
-    top: 53%;
+    top: 50.4%;
   }
   .form-container {
     margin-top: 45px;
@@ -436,7 +436,7 @@ input::placeholder {
 
 @media (min-width: 1200px) {
   .card-front {
-    top: 18%;
+    top: 20.8%;
     left: 25%;
     padding: 28px 32px 26.5 32px;
     width: 447px;
@@ -446,7 +446,7 @@ input::placeholder {
     width: 447px;
     height: 245px;
     left: 42%;
-    top: 53%;
+    top: 52.1%;
   }
 
   .form-container {
@@ -483,8 +483,6 @@ input::placeholder {
     min-width: 50%;
     max-width: 50%;
   }
-
-
 }
 
 @media (min-width: 1440px) {
@@ -506,13 +504,11 @@ input::placeholder {
     max-width: 381px;
     margin-top: 48px;
   }
-
- 
 }
 
 @media (min-width: 1600px) {
   .card-front {
-    top: 18%;
+    top: 20.8%;
     left: 55%;
     width: 447px;
     height: 245px;
@@ -521,7 +517,7 @@ input::placeholder {
     width: 447px;
     height: 245px;
     left: 65%;
-    top: 52%;
+    top: 52.1%;
   }
 
   .form-container {
