@@ -24,21 +24,24 @@ console.log(formContainer)
 function addCardDetails(e) {
   e.preventDefault();
 
-  // Check if all fields are not empty
+  let isValid = true;
 
 if (inputCardNumber.value === '' || inputCardNumber.value.length < 16) {
     inputCardNumber.style.border = '1px solid red';
     alertMessageNumber.innerHTML = inputCardNumber.value === '' ? 'Please enter a number' : 'Wrong format';
+    isValid = false;
 }
 
 if (inputName.value === '') {
     inputName.style.border = '1px solid red';
     alertMessageName.innerHTML = 'Please enter a name';
+    isValid = false;
 }
 
 if (inputCCV.value === '') {
     inputCCV.style.border = '1px solid red';
     alertMessageCCV.innerHTML = 'Can\'t be blank';
+    isValid = false;
 }
 
 if (inputExpMonth.value === '' || inputExpYear.value === '') {
@@ -51,9 +54,14 @@ if (inputExpMonth.value === '' || inputExpYear.value === '') {
 
       inputExpYear.style.border = '1px solid red';
     }
+    
   
     alertMessageMonth.innerHTML = 'Can\'t be blank';
-    return;
+    isValid = false;
+}
+
+if(!isValid) {
+  return
 }
 
 console.log(formContainer)
@@ -89,8 +97,8 @@ function displayName(e) {
     e.target.value = sanitizedInputValue; // update input field value with sanitized value
     inputValue = sanitizedInputValue; // update input value variable with sanitized value
   }
-  if (inputValue.length > 30) {
-    inputValue = inputValue.slice(0, 30); // truncate input value to maximum of 30 characters
+  if (inputValue.length > 22) {
+    inputValue = inputValue.slice(0, 22); // truncate input value to maximum of 30 characters
     e.target.value = inputValue; // update input field value with truncated value
   }
     cardName.innerHTML = inputValue
@@ -121,7 +129,11 @@ function displayLimitYear(e) {
 
     if (e.target.value.length > 2) {
         e.target.value = e.target.value.slice(0, 2);
-      }
+      } else if (e.target.value.length === 2) {
+         if(e.target.value < lastTwoDigits) {
+             e.target.value = lastTwoDigits
+         };
+       }
 
     const year = document.getElementById('year').innerHTML = e.target.value
 
